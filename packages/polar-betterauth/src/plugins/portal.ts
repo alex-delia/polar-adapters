@@ -13,7 +13,7 @@ export const portal = () => (polar: Polar) => {
 				use: [sessionMiddleware],
 				query: z.object({ 
           redirect: z.coerce.boolean().optional().default(true) 
-        }),
+        }).optional(),
 			},
 			async (ctx) => {
 				if (!ctx.context.session?.user.id) {
